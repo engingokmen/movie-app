@@ -4,6 +4,8 @@
   "description": "It is a octet case to test qualification of the candidates.",
   "main": "dist/index.js",
   "scripts": {
+        "start": "webpack serve --mode development --open",
+        "build": "webpack --mode production",
     "test": "test"
   },
   "repository": {
@@ -21,9 +23,12 @@
   },
   "homepage": "https://github.com/engingokmen/movie-app#readme",
   "devDependencies": {
+        "html-webpack-plugin": "^5.6.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.6.2",
     "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4"
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.1.0"
+    },
   }
 }
