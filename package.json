@@ -1,0 +1,23 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "description": "It is a octet case to test qualification of the candidates.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/engingokmen/movie-app"
+  },
+  "keywords": [
+    "octet",
+    "movie"
+  ],
+  "author": "Engin Gokmen <engin.gokmen@icloud.com> (https://engingokmen.click)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/engingokmen/movie-app/issues"
+  },
+  "homepage": "https://github.com/engingokmen/movie-app#readme"
+}
