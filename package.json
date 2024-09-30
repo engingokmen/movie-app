@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/engingokmen/movie-app/issues"
   },
-  "homepage": "https://github.com/engingokmen/movie-app#readme"
+  "homepage": "https://github.com/engingokmen/movie-app#readme",
+  "devDependencies": {
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.2",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  }
 }
