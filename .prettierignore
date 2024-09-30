@@ -6,3 +6,4 @@ coverage
 **/*.html
 
 **/node_modules
+_resetCSS.scss
