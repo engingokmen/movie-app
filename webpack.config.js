@@ -25,7 +25,19 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html',
+            template: './src/html/index.html',
+        }),
+        new HtmlWebpackPlugin({
+            filename: '404.html',
+            template: 'src/html/404.html',
         }),
     ],
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        historyApiFallback: {
+            rewrites: [{ from: /./, to: '/404.html' }],
+        },
+    },
 }
