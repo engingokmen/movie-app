@@ -1,5 +1,6 @@
 import React from 'react'
 import { useMovies } from '../../context/movies'
+import { AddToFavoritesButton } from '../favorites/AddToFavoritesButton'
 
 export const Movies = () => {
     const movies = useMovies()
@@ -8,6 +9,7 @@ export const Movies = () => {
         <li key={movie.id}>
             <h2>{movie.name}</h2>
             <p>{movie.summary}</p>
+            <AddToFavoritesButton id={movie.id} />
         </li>
     ))
 

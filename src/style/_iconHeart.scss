@@ -1,0 +1,21 @@
+.icon-heart-container {
+    background-color: $lightGray;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-heart {
+    & path {
+        fill: $gray;
+    }
+
+    &.active {
+        & path {
+            fill: $red;
+        }
+    }
+}
