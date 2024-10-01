@@ -1,11 +1,11 @@
 import React from 'react'
 import { Routes } from './routes'
+import { Layout } from './features/layout'
 
 export const MovieApp = () => {
     return (
-        <>
-            <h1>MovieApp</h1>
+        <Layout>
             <Routes />
-        </>
+        </Layout>
     )
 }
