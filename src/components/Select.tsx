@@ -12,7 +12,7 @@ interface SelectProps {
 }
 
 export const Select = ({
-    label: texts,
+    label,
     icon,
     options,
     selected,
@@ -57,7 +57,7 @@ export const Select = ({
     return (
         <div ref={ref} className="select-container">
             <FilterSortButton onClick={handleClick}>
-                {texts}
+                {label}
                 {icon}
                 <CircleToggle show={isSelected} />
             </FilterSortButton>
