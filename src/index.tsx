@@ -5,15 +5,18 @@ import { MovieApp } from './MovieApp'
 import { AuthProvider } from './context/authenticate'
 import { MoviesProvider } from './context/movies'
 import { FavoritesProvider } from './context/favorites'
+import { FilterProvider } from './context/filters'
 
 const root = createRoot(document.getElementById('app'))
 root.render(
     <React.StrictMode>
         <AuthProvider>
             <MoviesProvider>
-                <FavoritesProvider>
-                    <MovieApp />
-                </FavoritesProvider>
+                <FilterProvider>
+                    <FavoritesProvider>
+                        <MovieApp />
+                    </FavoritesProvider>
+                </FilterProvider>
             </MoviesProvider>
         </AuthProvider>
     </React.StrictMode>
