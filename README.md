@@ -19,3 +19,7 @@ It is a Octet company case to test the qualifications of the candidates.
 > npm run db
 
 -   starts at port 3001
+
+## Notes
+
+-   .env file could be moved to .gitignore file when the project matured
