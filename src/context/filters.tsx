@@ -1,6 +1,10 @@
 import React, { createContext, ReactNode, useContext, useReducer } from 'react'
 
-const FilterContext = createContext(null)
+const initialState = {
+    search: '',
+}
+
+const FilterContext = createContext(initialState)
 const FilterDispatchContext = createContext(null)
 
 interface FilterProviderProps {
@@ -8,7 +12,7 @@ interface FilterProviderProps {
 }
 
 export const FilterProvider = ({ children }: FilterProviderProps) => {
-    const [filters, dispatch] = useReducer(reducer, {})
+    const [filters, dispatch] = useReducer(reducer, initialState)
 
     return (
         <FilterContext.Provider value={filters}>
@@ -42,6 +46,6 @@ const reducer = (state: any, action: any) => {
 // ACTION CREATORS
 
 export const changeInput = (value: string) => ({
-    type: 'CHANGE_INPUT',
+    type: 'SET_SEARCH',
     payload: value,
 })
