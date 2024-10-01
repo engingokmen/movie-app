@@ -1,11 +1,11 @@
 import React from 'react'
-import { Login } from './features/login'
+import { Routes } from './routes'
 
 export const MovieApp = () => {
     return (
         <>
             <h1>MovieApp</h1>
-            <Login />
+            <Routes />
         </>
     )
 }

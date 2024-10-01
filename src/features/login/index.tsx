@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { useSetIsAuthenticated } from '../../context/authenticate'
+
+interface IFormInput {
+    email: string
+    password: string
+}
 
 const schema = yup
     .object({
@@ -31,7 +37,12 @@ export const Login = () => {
     } = useForm({
         resolver: yupResolver(schema),
     })
-    const onSubmit = (data: any) => console.log(data)
+    const setIsAuthenticated = useSetIsAuthenticated()
+
+    const onSubmit = (data: IFormInput) => {
+        console.log(data)
+        setIsAuthenticated(true)
+    }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
