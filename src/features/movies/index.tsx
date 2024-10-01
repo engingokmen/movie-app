@@ -1,6 +1,7 @@
 import React from 'react'
 import { useMovies } from '../../context/movies'
 import { AddToFavoritesButton } from '../favorites/AddToFavoritesButton'
+import { SubHeader } from './SubHeader'
 
 export const Movies = () => {
     const movies = useMovies()
@@ -17,5 +18,10 @@ export const Movies = () => {
         </li>
     ))
 
-    return <ul>{moviesList}</ul>
+    return (
+        <>
+            <SubHeader />
+            <ul>{moviesList}</ul>
+        </>
+    )
 }

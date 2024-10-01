@@ -1,0 +1,28 @@
+.select-container {
+    position: relative;
+}
+
+.select {
+    width: 131px;
+    display: none;
+    position: absolute;
+    bottom: -10px;
+    transform: translate(-50%, 100%);
+    background-color: $lightBlue;
+    border: 2px solid $darkBlue;
+    border-radius: 8px;
+
+    &.show {
+        display: block;
+    }
+
+    & .option {
+        cursor: pointer;
+        padding: 8px;
+
+        &:hover,
+        &.selected {
+            background-color: $blue;
+        }
+    }
+}

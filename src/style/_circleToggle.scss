@@ -1,0 +1,14 @@
+.circle-toggle {
+    display: none;
+    width: 8px;
+    height: 8px;
+    background-color: #6366f1;
+    border-radius: 8px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+
+    &.show {
+        display: block;
+    }
+}

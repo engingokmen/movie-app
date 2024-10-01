@@ -1,7 +1,14 @@
 import React, { createContext, ReactNode, useContext, useReducer } from 'react'
 
+export const options = [
+    { value: 'all', label: 'All' },
+    { value: 'favorites', label: 'Favorites' },
+    { value: 'new', label: 'New releases' },
+]
+
 const initialState = {
     search: '',
+    sort: 'all',
 }
 
 const FilterContext = createContext(initialState)
@@ -38,6 +45,11 @@ const reducer = (state: any, action: any) => {
                 ...state,
                 search: action.payload,
             }
+        case 'SET_SORT':
+            return {
+                ...state,
+                sort: action.payload,
+            }
         default:
             return state
     }
@@ -47,5 +59,10 @@ const reducer = (state: any, action: any) => {
 
 export const changeInput = (value: string) => ({
     type: 'SET_SEARCH',
+    payload: value,
+})
+
+export const changeSort = (value: string) => ({
+    type: 'SET_SORT',
     payload: value,
 })
