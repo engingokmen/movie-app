@@ -26,7 +26,6 @@ export const router = createBrowserRouter([
 
 function PrivateRoutes({ element }: { element: ReactNode }) {
     const isAuthenticated = useIsAuthenticated()
-    console.log('isAuthenticated', isAuthenticated)
 
     if (!isAuthenticated) {
         return <Navigate to="/" replace />
