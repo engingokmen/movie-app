@@ -16,4 +16,8 @@ export const texts = {
     filmName: 'Film Adı',
     releaseDate: 'Vizyon Tarihi',
     ImdbScore: 'Imdb Puanı',
+    remove: 'Kaldır',
+    all: 'Tümü',
+    newReleases: 'Yeni eklenenler',
+    imdbScore: 'IMDB Puanı',
 }

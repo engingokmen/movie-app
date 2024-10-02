@@ -1,14 +1,23 @@
 import React, { createContext, ReactNode, useContext, useReducer } from 'react'
+import { texts } from '../texts'
 
-export const options = [
-    { value: 'all', label: 'All' },
-    { value: 'favorites', label: 'Favorites' },
-    { value: 'new', label: 'New releases' },
+export const filterOptions = [
+    { value: '', label: texts.all },
+    { value: 'favorites', label: texts.favorites },
+    { value: 'newReleases', label: texts.newReleases },
+]
+
+export const sortOptions = [
+    { value: '', label: texts.remove },
+    { value: 'filmName', label: texts.filmName },
+    { value: 'releaseDate', label: texts.releaseDate },
+    { value: 'imdbScore', label: texts.imdbScore },
 ]
 
 const initialState = {
     search: '',
-    sort: 'all',
+    sort: '',
+    filter: '',
 }
 
 const FilterContext = createContext(initialState)
@@ -45,6 +54,11 @@ const reducer = (state: any, action: any) => {
                 ...state,
                 search: action.payload,
             }
+        case 'SET_FILTER':
+            return {
+                ...state,
+                filter: action.payload,
+            }
         case 'SET_SORT':
             return {
                 ...state,
@@ -64,5 +78,10 @@ export const changeInput = (value: string) => ({
 
 export const changeSort = (value: string) => ({
     type: 'SET_SORT',
+    payload: value,
+})
+
+export const changeFilter = (value: string) => ({
+    type: 'SET_FILTER',
     payload: value,
 })

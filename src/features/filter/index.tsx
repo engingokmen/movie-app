@@ -1,28 +1,28 @@
 import React from 'react'
 import {
-    changeSort,
-    sortOptions,
+    changeFilter,
+    filterOptions,
     useFilter,
     useFilterDispatch,
 } from '../../context/filters'
 import { Select } from '../../components/Select'
-import { SortIcon } from '../../assets/SortIcon'
+import { FilterIcon } from '../../assets/FilterIcon'
 import { texts } from '../../texts'
 
-export const Sort = () => {
-    const { sort } = useFilter()
+export const Filter = () => {
+    const { filter } = useFilter()
     const dispatch = useFilterDispatch()
 
     const handleChange = (e: any) => {
-        dispatch(changeSort(e.target.dataset.value))
+        dispatch(changeFilter(e.target.dataset.value))
     }
 
     return (
         <Select
-            label={texts.sort}
-            icon={<SortIcon />}
-            options={sortOptions}
-            selected={sort}
+            label={texts.filter}
+            icon={<FilterIcon />}
+            options={filterOptions}
+            selected={filter}
             onChange={handleChange}
         />
     )

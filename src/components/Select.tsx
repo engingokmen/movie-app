@@ -53,7 +53,8 @@ export const Select = ({
         setClassName('')
     }
 
-    const isSelected = selected !== 'all'
+    const isSelected = !!selected
+
     return (
         <div ref={ref} className="select-container">
             <FilterSortButton onClick={handleClick}>
