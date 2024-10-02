@@ -1,0 +1,40 @@
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    padding: 32px 24px 48px;
+    border: 2px solid $lightGray;
+    border-radius: 8px;
+    flex-grow: 1;
+    max-width: 560px;
+
+    & h2 {
+        font-size: 36px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    & input {
+        font-size: 24px;
+        padding: 24px;
+        margin-top: 18px;
+        border: 2px solid $lightGray;
+        border-radius: 8px;
+    }
+
+    & button {
+        margin-top: 24px;
+    }
+
+    .error-message {
+        font-size: 14px;
+        color: $red;
+    }
+}

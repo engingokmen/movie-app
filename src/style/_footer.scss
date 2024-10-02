@@ -1,0 +1,30 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    .icons {
+        display: flex;
+        gap: 24px;
+    }
+
+    .links {
+        display: flex;
+        gap: 24px;
+        font-size: 12px;
+    }
+
+    .register {
+        color: $darkGray;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    footer {
+        .links {
+            font-size: 16px;
+        }
+    }
+}

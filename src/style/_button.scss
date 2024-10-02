@@ -1,0 +1,13 @@
+.button-primary {
+    display: flex;
+    border: 1px solid $blueF6;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+
+    &:hover {
+        background-color: $blueF6;
+        color: $white;
+    }
+}

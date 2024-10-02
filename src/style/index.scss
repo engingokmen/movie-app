@@ -1,13 +1,17 @@
 :root {
-    font-family: Helvetica;
+    font-family: DM Sans, sans-serif;
 }
 
+$white: #ffffff;
 $lightBlue: #f0f9ff;
 $blue: #bae6fd;
 $darkBlue: #7dd3fc;
 $darkestBlue: #0ea5e9;
-$lightGray: #f3f4f680;
+$blueF6: #3b82f6;
+$lighterGray: #f3f4f680;
 $gray: #d1d5db;
+$lightGray: #d1d5db;
+$darkGray: #6b7280;
 $red: #f87171;
 
 @import 'resetCSS';
@@ -19,3 +23,9 @@ $red: #f87171;
 @import 'filterSortButton';
 @import 'subHeader';
 @import 'page404';
+@import 'layout.scss';
+@import 'header.scss';
+@import 'main.scss';
+@import 'footer.scss';
+@import 'loginForm.scss';
+@import 'button.scss';

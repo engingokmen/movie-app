@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useSetIsAuthenticated } from '../../context/authenticate'
 import { useNavigate } from 'react-router-dom'
+import { texts } from '../../texts'
 
 const schema = yup
     .object({
@@ -42,14 +43,19 @@ export const Login = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...register('email')} />
-            <p>{errors.email?.message}</p>
+        <div className="login-form-container">
+            <form onSubmit={handleSubmit(onSubmit)} className="login-form">
+                <h2>{texts.login}</h2>
+                <input {...register('email')} placeholder={texts.email} />
+                <p className="error-message">{errors.email?.message}</p>
 
-            <input {...register('password')} />
-            <p>{errors.password?.message}</p>
+                <input {...register('password')} placeholder={texts.password} />
+                <p className="error-message">{errors.password?.message}</p>
 
-            <input type="submit" />
-        </form>
+                <button type="submit" className="reset-button button-primary">
+                    {texts.loginButton}
+                </button>
+            </form>
+        </div>
     )
 }

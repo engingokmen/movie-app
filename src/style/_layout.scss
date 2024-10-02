@@ -1,0 +1,7 @@
+.layout {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 50px 1fr 170px;
+    grid-template-areas: 'header' 'main' 'footer';
+    grid-gap: 20px;
+}
