@@ -1,11 +1,7 @@
 import React from 'react'
-import { Routes } from './routes'
-import { Layout } from './features/layout'
+import { router } from './routes'
+import { RouterProvider } from 'react-router-dom'
 
 export const MovieApp = () => {
-    return (
-        <Layout>
-            <Routes />
-        </Layout>
-    )
+    return <RouterProvider router={router} />
 }

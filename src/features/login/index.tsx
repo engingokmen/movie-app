@@ -3,11 +3,7 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useSetIsAuthenticated } from '../../context/authenticate'
-
-interface IFormInput {
-    email: string
-    password: string
-}
+import { useNavigate } from 'react-router-dom'
 
 const schema = yup
     .object({
@@ -38,10 +34,11 @@ export const Login = () => {
         resolver: yupResolver(schema),
     })
     const setIsAuthenticated = useSetIsAuthenticated()
+    const navigate = useNavigate()
 
-    const onSubmit = (data: IFormInput) => {
-        console.log(data)
-        setIsAuthenticated(true)
+    const onSubmit = async () => {
+        await setIsAuthenticated(true)
+        navigate('movies')
     }
 
     return (
