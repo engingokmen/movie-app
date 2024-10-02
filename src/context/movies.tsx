@@ -1,7 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { IMovie } from '../types'
+import { FilterOptionsEnum, IMovie, SortOptionsEnum } from '../types'
 import { useIsAuthenticated } from './authenticate'
 import { useFilter } from './filters'
+import { useFavorites } from './favorites'
 
 const MoviesContext = createContext<IMovie[]>(null)
 
@@ -33,12 +34,23 @@ export const MoviesProvider = ({ children }: MoviesProviderProps) => {
 }
 
 export const useMovies = () => {
-    const { search } = useFilter()
-    const movies = useContext(MoviesContext)
-    const searchedMovies = searchMovies(movies, search)
+    const { search, filter, sort } = useFilter()
+    const favorites = useFavorites()
 
-    return searchedMovies
+    const movies = useContext(MoviesContext)
+
+    const searchedMovies = searchMovies(movies, search)
+    const moviesOnFavorites = getMoviesOnFavorites(
+        searchedMovies,
+        favorites,
+        filter
+    )
+    const sortedMovies = sortMovies(moviesOnFavorites, sort)
+
+    return sortedMovies
 }
+
+// SELECTORS
 
 const searchMovies = (movies: IMovie[], search: string) => {
     if (movies === null) {
@@ -48,4 +60,68 @@ const searchMovies = (movies: IMovie[], search: string) => {
     return movies.filter((movie) => {
         return movie.name.toLowerCase().includes(search.toLowerCase())
     })
+}
+
+const getMoviesOnFavorites = (
+    movies: IMovie[],
+    favorites: string[],
+    filter: string
+) => {
+    if (movies === null || !filter) {
+        return movies
+    }
+
+    if (filter === FilterOptionsEnum.favorites) {
+        return movies.filter((movie) => favorites.includes(movie.id))
+    }
+
+    if (filter === FilterOptionsEnum.newReleases) {
+        return movies.filter(
+            (movie) => movie.year > new Date().getFullYear() - 6
+        )
+    }
+
+    return movies
+}
+
+const sortMovies = (movies: IMovie[], sort: string) => {
+    if (movies === null || !sort) {
+        return movies
+    }
+
+    if (sort === SortOptionsEnum.name) {
+        return movies.sort((a, b) => {
+            if (a.name > b.name) {
+                return 1
+            } else if (a.name < b.name) {
+                return -1
+            }
+
+            return 0
+        })
+    }
+
+    if (sort === SortOptionsEnum.year) {
+        return movies.sort((a, b) => {
+            if (a.year > b.year) {
+                return -1
+            } else if (a.year < b.year) {
+                return 1
+            }
+
+            return 0
+        })
+    }
+
+    if (sort === SortOptionsEnum.imdb) {
+        return movies.sort((a, b) => {
+            if (a.imdb > b.imdb) {
+                return -1
+            } else if (a.imdb < b.imdb) {
+                return 1
+            }
+
+            return 0
+        })
+    }
 }

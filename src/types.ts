@@ -8,3 +8,14 @@ export interface IMovie {
     isTvSeries: boolean
     summary: string
 }
+
+export enum FilterOptionsEnum {
+    favorites = 'favorites',
+    newReleases = 'newReleases',
+}
+
+export enum SortOptionsEnum {
+    name = 'name',
+    year = 'year',
+    imdb = 'imdb',
+}

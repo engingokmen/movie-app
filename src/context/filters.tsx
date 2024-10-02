@@ -1,17 +1,18 @@
 import React, { createContext, ReactNode, useContext, useReducer } from 'react'
 import { texts } from '../texts'
+import { FilterOptionsEnum, SortOptionsEnum } from '../types'
 
 export const filterOptions = [
     { value: '', label: texts.all },
-    { value: 'favorites', label: texts.favorites },
-    { value: 'newReleases', label: texts.newReleases },
+    { value: FilterOptionsEnum.favorites, label: texts.favorites },
+    { value: FilterOptionsEnum.newReleases, label: texts.newReleases },
 ]
 
 export const sortOptions = [
     { value: '', label: texts.remove },
-    { value: 'filmName', label: texts.filmName },
-    { value: 'releaseDate', label: texts.releaseDate },
-    { value: 'imdbScore', label: texts.imdbScore },
+    { value: SortOptionsEnum.name, label: texts.filmName },
+    { value: SortOptionsEnum.year, label: texts.releaseDate },
+    { value: SortOptionsEnum.imdb, label: texts.imdbScore },
 ]
 
 const initialState = {

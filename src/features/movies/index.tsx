@@ -14,6 +14,8 @@ export const Movies = () => {
         <li key={movie.id}>
             <h2>{movie.name}</h2>
             <p>{movie.summary}</p>
+            <p>{movie.year}</p>
+            <p>{movie.imdb}</p>
             <AddToFavoritesButton id={movie.id} />
         </li>
     ))
