@@ -11,7 +11,7 @@ export const Header = () => {
     const matchDetail = useMatch('/movies/:id')
     const favorites = useFavorites()
     const movies = useMovies()
-    const movie = getMovieById(movies, matchDetail?.params.id)
+    const movie = getMovieById(movies, matchDetail?.params?.id)
 
     let title
     if (matchHome) {
@@ -26,7 +26,7 @@ export const Header = () => {
             </>
         )
     } else if (matchDetail) {
-        title = <h1>{movie.name}</h1>
+        title = <h1>{movie?.name}</h1>
     }
 
     return <header>{title}</header>

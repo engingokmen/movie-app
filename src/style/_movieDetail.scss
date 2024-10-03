@@ -15,4 +15,11 @@
         margin: 24px 0;
         border-bottom: $border;
     }
+
+    & .back-link {
+        position: absolute;
+        top: 32px;
+        left: 32px;
+        color: $darkestBlue;
+    }
 }

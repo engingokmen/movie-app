@@ -1,14 +1,7 @@
 .movie-card {
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 12px;
-
-    & .button-addtofavorites {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-    }
 
     & .movie-name {
         width: 250px;
@@ -16,4 +9,10 @@
         white-space: nowrap;
         text-overflow: ellipsis;
     }
+}
+
+.button-addtofavorites {
+    position: absolute;
+    top: 12px;
+    right: 12px;
 }

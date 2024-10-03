@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getMovieById, useMovies } from '../../context/movies'
 import { ImdbScore } from '../../components/ImdbScore'
 
@@ -10,6 +10,9 @@ export const Detail = () => {
 
     return (
         <div className="movie-detail">
+            <Link to="/movies" className="back-link">
+                Back to movies
+            </Link>
             <div className="poster-container">
                 <img src={movie.poster} alt={movie.name} />
             </div>

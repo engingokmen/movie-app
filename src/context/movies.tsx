@@ -131,6 +131,6 @@ const sortMovies = (movies: IMovie[], sort: string) => {
 }
 
 export const getMovieById = (movies: IMovie[], id: string | null) => {
-    if (!id) return
+    if (!id || !movies?.length) return
     return movies.find((movie) => movie.id === id)
 }

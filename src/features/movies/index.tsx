@@ -13,8 +13,8 @@ export const Movies = () => {
     }
 
     const filteredMoviesList = filteredMovies.map((movie) => (
-        <li key={movie.id} className="movie-card">
-            <Link to={movie.id} key={movie.id}>
+        <li key={movie.id} className="relative">
+            <Link to={movie.id} key={movie.id} className="movie-card">
                 <img
                     src={movie.poster}
                     alt={movie.name}
