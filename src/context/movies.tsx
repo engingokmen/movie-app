@@ -33,7 +33,7 @@ export const MoviesProvider = ({ children }: MoviesProviderProps) => {
     )
 }
 
-export const useMovies = () => {
+export const useFilteredMovies = () => {
     const { search, filter, sort } = useFilter()
     const favorites = useFavorites()
 
@@ -48,6 +48,10 @@ export const useMovies = () => {
     const sortedMovies = sortMovies(moviesOnFavorites, sort)
 
     return sortedMovies
+}
+
+export const useMovies = () => {
+    return useContext(MoviesContext)
 }
 
 // SELECTORS
@@ -126,8 +130,7 @@ const sortMovies = (movies: IMovie[], sort: string) => {
     }
 }
 
-export const getMovieById = (id: string) => {
-    const movies = useContext(MoviesContext)
-
+export const getMovieById = (movies: IMovie[], id: string | null) => {
+    if (!id) return
     return movies.find((movie) => movie.id === id)
 }

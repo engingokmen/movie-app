@@ -1,11 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { getMovieById } from '../../context/movies'
+import { getMovieById, useMovies } from '../../context/movies'
 import { ImdbScore } from '../../components/ImdbScore'
 
 export const Detail = () => {
     const { id } = useParams()
-    const movie = getMovieById(id)
+    const movies = useMovies()
+    const movie = getMovieById(movies, id)
 
     return (
         <div className="movie-detail">

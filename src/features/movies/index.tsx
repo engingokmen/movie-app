@@ -1,18 +1,18 @@
 import React from 'react'
-import { useMovies } from '../../context/movies'
+import { useFilteredMovies } from '../../context/movies'
 import { AddToFavoritesButton } from '../favorites/AddToFavoritesButton'
 import { SubHeader } from './SubHeader'
 import { Link } from 'react-router-dom'
 import { ImdbScore } from '../../components/ImdbScore'
 
 export const Movies = () => {
-    const movies = useMovies()
+    const filteredMovies = useFilteredMovies()
 
-    if (movies === null) {
+    if (filteredMovies === null) {
         return <p>Loading...</p>
     }
 
-    const moviesList = movies.map((movie) => (
+    const filteredMoviesList = filteredMovies.map((movie) => (
         <li key={movie.id} className="movie-card">
             <Link to={movie.id} key={movie.id}>
                 <img
@@ -35,7 +35,7 @@ export const Movies = () => {
     return (
         <>
             <SubHeader />
-            <ul className="movie-list">{moviesList}</ul>
+            <ul className="movie-list">{filteredMoviesList}</ul>
         </>
     )
 }
