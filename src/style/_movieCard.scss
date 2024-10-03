@@ -22,4 +22,11 @@
         align-items: center;
         gap: 8px;
     }
+
+    & .movie-name {
+        width: 250px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 }

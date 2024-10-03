@@ -23,7 +23,7 @@ export const Movies = () => {
             <p className="text-gray-small">
                 {movie.country}, {movie.year}
             </p>
-            <h2 className="text-dark">{movie.name}</h2>
+            <h2 className="text-dark movie-name">{movie.name}</h2>
             <p className="icon-score">
                 <img src={imdb} alt="imdb" width="35px" />
                 <p className="text-dark">{movie.imdb} / 100</p>
