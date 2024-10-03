@@ -1,5 +1,7 @@
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    grid-template-areas: 'left right';
 
     h1 {
         font-size: 36px;
@@ -8,5 +10,29 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    & .header-favorites {
+        grid-area: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 6px;
+    }
+
+    & .search-input {
+        grid-area: left;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    header {
+        grid-template-columns: 80px 1fr 80px;
+        grid-template-areas: 'left center right';
+        justify-items: center;
+
+        & .search-input {
+            grid-area: center;
+        }
     }
 }
