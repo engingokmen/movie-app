@@ -5,6 +5,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { Layout } from '../features/layout'
 import { useIsAuthenticated } from '../context/authenticate'
 import { Page404 } from '../components/Page404'
+import { Detail } from '../features/detail'
 
 export const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
             {
                 path: 'movies',
                 element: <PrivateRoutes element={<Movies />} />,
+            },
+            {
+                path: 'movies/:id',
+                element: <Detail />,
             },
             { path: '*', element: <Page404 /> },
         ],

@@ -14,26 +14,39 @@ $lightGray: #d1d5db;
 $graydark2: #9ca3af;
 $darkGray: #6b7280;
 $darkestGray: #111827;
+$salmon: #ffe4d7;
 $red: #f87171;
 $redRose: #be123c;
 $border: 2px solid $lightGray;
 $borderRadius: 8px;
 
+// resets
 @import 'resetCSS';
-@import 'aCommon';
 @import 'resetbutton';
+@import 'resetATags.scss';
+
+// common
+@import 'aCommon';
+
+// icons
 @import 'iconHeart';
+@import 'iconScore.scss';
+
+// components
+@import 'button.scss';
+@import 'filterSortButton';
 @import 'select';
 @import 'circleToggle';
-@import 'filterSortButton';
+@import 'searchInput.scss';
+@import 'movieCard.scss';
 @import 'subHeader';
-@import 'page404';
+
+// pages
 @import 'layout.scss';
 @import 'header.scss';
 @import 'main.scss';
 @import 'footer.scss';
 @import 'loginForm.scss';
-@import 'button.scss';
-@import 'searchInput.scss';
-@import 'movieCard.scss';
 @import 'movieList.scss';
+@import 'movieDetail.scss';
+@import 'page404';

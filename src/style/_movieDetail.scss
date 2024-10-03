@@ -1,0 +1,18 @@
+.movie-detail {
+    & .poster-container {
+        background-color: $darkestGray;
+        display: flex;
+        justify-content: center;
+    }
+
+    & .movie-summary {
+        margin-top: 24px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    & .seperator {
+        margin: 24px 0;
+        border-bottom: $border;
+    }
+}

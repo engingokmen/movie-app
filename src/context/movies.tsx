@@ -125,3 +125,9 @@ const sortMovies = (movies: IMovie[], sort: string) => {
         })
     }
 }
+
+export const getMovieById = (id: string) => {
+    const movies = useContext(MoviesContext)
+
+    return movies.find((movie) => movie.id === id)
+}

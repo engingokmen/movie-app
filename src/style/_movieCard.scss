@@ -10,19 +10,6 @@
         right: 12px;
     }
 
-    & .text-gray-small {
-        color: $graydark2;
-        font-size: 12px;
-    }
-
-    & .icon-score {
-        color: $graydark2;
-        font-size: 12px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
     & .movie-name {
         width: 250px;
         overflow: hidden;

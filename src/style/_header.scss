@@ -31,6 +31,10 @@ header {
         grid-template-areas: 'left center right';
         justify-items: center;
 
+        & h1 {
+            grid-area: center;
+        }
+
         & .search-input {
             grid-area: center;
         }

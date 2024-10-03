@@ -2,8 +2,8 @@ import React from 'react'
 import { useMovies } from '../../context/movies'
 import { AddToFavoritesButton } from '../favorites/AddToFavoritesButton'
 import { SubHeader } from './SubHeader'
-// disable-eslint-next-line
-import imdb from '../../assets/imdb.png'
+import { Link } from 'react-router-dom'
+import { ImdbScore } from '../../components/ImdbScore'
 
 export const Movies = () => {
     const movies = useMovies()
@@ -14,21 +14,20 @@ export const Movies = () => {
 
     const moviesList = movies.map((movie) => (
         <li key={movie.id} className="movie-card">
-            <img
-                src={movie.poster}
-                alt={movie.name}
-                width="250px"
-                height="370px"
-            />
-            <p className="text-gray-small">
-                {movie.country}, {movie.year}
-            </p>
-            <h2 className="text-dark movie-name">{movie.name}</h2>
-            <p className="icon-score">
-                <img src={imdb} alt="imdb" width="35px" />
-                <p className="text-dark">{movie.imdb} / 100</p>
-            </p>
-            <p className="text-gray-small">{movie.category}</p>
+            <Link to={movie.id} key={movie.id}>
+                <img
+                    src={movie.poster}
+                    alt={movie.name}
+                    width="250px"
+                    height="370px"
+                />
+                <p className="text-gray-small">
+                    {movie.country}, {movie.year}
+                </p>
+                <h2 className="text-dark movie-name">{movie.name}</h2>
+                <ImdbScore score={movie.imdb} />
+                <p className="text-gray-small">{movie.category}</p>
+            </Link>
             <AddToFavoritesButton id={movie.id} />
         </li>
     ))
