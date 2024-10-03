@@ -18,7 +18,10 @@ export const AddToFavoritesButton = ({ id }: AddToFavoritesButtonProps) => {
     const icon = isExist ? <Heart className="active" /> : <Heart />
 
     return (
-        <button className="reset-button" onClick={handleClick}>
+        <button
+            className="reset-button button-addtofavorites"
+            onClick={handleClick}
+        >
             {icon}
         </button>
     )

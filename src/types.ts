@@ -7,6 +7,7 @@ export interface IMovie {
     category: string
     isTvSeries: boolean
     summary: string
+    poster: string
 }
 
 export enum FilterOptionsEnum {
