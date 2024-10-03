@@ -1,7 +1,13 @@
 .layout {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: 50px 1fr 170px;
     grid-template-areas: 'header' 'main' 'footer';
     grid-gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .layout {
+        padding: 40px 120px;
+    }
 }

@@ -13,6 +13,8 @@ $gray: #d1d5db;
 $lightGray: #d1d5db;
 $darkGray: #6b7280;
 $red: #f87171;
+$border: 2px solid $lightGray;
+$borderRadius: 8px;
 
 @import 'resetCSS';
 @import 'aCommon';
@@ -29,3 +31,4 @@ $red: #f87171;
 @import 'footer.scss';
 @import 'loginForm.scss';
 @import 'button.scss';
+@import 'searchInput.scss';
