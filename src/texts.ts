@@ -20,4 +20,5 @@ export const texts = {
     all: 'Tümü',
     newReleases: 'Yeni eklenenler',
     imdbScore: 'IMDB Puanı',
+    notFound404: 'It is a custom 404 Not Found',
 }
