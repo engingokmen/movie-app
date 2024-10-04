@@ -1,6 +1,6 @@
 # Movie app
 
-It is a Octet company case to test the qualifications of the candidates.
+It is a single page application which
 
 ## Start dev server
 
