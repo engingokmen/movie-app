@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'movies/:id',
-                element: <Detail />,
+                element: <PrivateRoutes element={<Detail />} />,
             },
             { path: '*', element: <Page404 /> },
         ],

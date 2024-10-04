@@ -31,6 +31,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            inject: false,
             template: './src/html/index.html',
         }),
         new Dotenv(),
