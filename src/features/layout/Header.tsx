@@ -4,11 +4,12 @@ import { useFavorites } from '../../context/favorites'
 import { texts } from '../../texts'
 import { useMatch } from 'react-router-dom'
 import { useMovieById } from '../../context/movies'
+import { PUBLIC_URL } from '../../settings'
 
 export const Header = () => {
-    const matchHome = useMatch('/')
-    const matchMovies = useMatch('/movies')
-    const matchDetail = useMatch('/movies/:id')
+    const matchHome = useMatch(PUBLIC_URL)
+    const matchMovies = useMatch(`${PUBLIC_URL}movies`)
+    const matchDetail = useMatch(`${PUBLIC_URL}movies/:id`)
     const favorites = useFavorites()
     const movie = useMovieById(matchDetail?.params?.id)
 

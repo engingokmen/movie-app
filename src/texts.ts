@@ -7,7 +7,7 @@ export const texts = {
     conditions: 'Conditions of Use',
     privacy: 'Privacy & Policy',
     pressRoom: 'Press Room',
-    moviesByOctet: '© 2023 Movies by Octet',
+    moviesByEg: '© 2023 Movies by EG',
     searchPlaceholder: 'What do you want to watch? ',
     subHeaderTitle: 'Movies',
     favorites: 'Favoriler',

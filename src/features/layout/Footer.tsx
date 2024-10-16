@@ -19,7 +19,7 @@ export const Footer = () => {
                 <p>{texts.privacy}</p>
                 <p>{texts.pressRoom}</p>
             </div>
-            <p className="register">{texts.moviesByOctet}</p>
+            <p className="register">{texts.moviesByEg}</p>
         </footer>
     )
 }

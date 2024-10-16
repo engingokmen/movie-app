@@ -6,11 +6,12 @@ import { Layout } from '../features/layout'
 import { useIsAuthenticated } from '../context/authenticate'
 import { Page404 } from '../components/Page404'
 import { Detail } from '../features/detail'
+import { PUBLIC_URL } from '../settings'
 
 export const router = createBrowserRouter([
     {
         element: <Layout />,
-        path: '/',
+        path: PUBLIC_URL,
         children: [
             {
                 index: true,
@@ -33,7 +34,7 @@ function PrivateRoutes({ element }: { element: ReactNode }) {
     const isAuthenticated = useIsAuthenticated()
 
     if (!isAuthenticated) {
-        return <Navigate to="/" replace />
+        return <Navigate to={PUBLIC_URL} replace />
     }
 
     return element
