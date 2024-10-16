@@ -7,7 +7,8 @@
         "start": "npm run build && webpack serve --open --config webpack.dev.js",
         "build": "webpack --config webpack.dev.js",
         "db": "json-server --watch db.json --port 3001",
-        "dist": "webpack --config webpack.prod.js && tsc --project tsconfig.types.json"
+        "dist": "webpack --config webpack.prod.js && tsc --project tsconfig.types.json",
+        "npm:publish": "npm version patch && npm publish --access public --otp ${otp}"
     },
     "repository": {
         "type": "git",
