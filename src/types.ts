@@ -20,3 +20,10 @@ export enum SortOptionsEnum {
     year = 'year',
     imdb = 'imdb',
 }
+
+export interface FavoritesAction {
+    addToFavorites: (id: string) => void
+    removeFromFavorites: (id: string) => void
+}
+
+export type ACTIONTYPE = { type: string; payload: string }

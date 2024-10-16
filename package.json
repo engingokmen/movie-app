@@ -1,20 +1,20 @@
 {
     "name": "movie-app",
-    "version": "1.0.0",
-    "description": "It is a octet case to test qualification of the candidates.",
+    "version": "1.1.0",
+    "description": "It is a movie app that you can search for movies and see their details.",
     "main": "dist/index.js",
     "scripts": {
-        "start": "webpack serve --mode development --open",
-        "build": "webpack --mode production",
+        "start": "npm run build && webpack serve --open --config webpack.dev.js",
+        "build": "webpack --config webpack.dev.js",
         "db": "json-server --watch db.json --port 3001",
-        "test": "test"
+        "dist": "webpack --config webpack.prod.js && tsc --project tsconfig.types.json"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/engingokmen/movie-app"
     },
     "keywords": [
-        "octet",
+        "search",
         "movie"
     ],
     "author": "Engin Gokmen <engin.gokmen@icloud.com> (https://engingokmen.click)",

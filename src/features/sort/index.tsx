@@ -12,6 +12,9 @@ import { texts } from '../../texts'
 export const Sort = () => {
     const { sort } = useFilter()
     const dispatch = useFilterDispatch()
+    if (dispatch === null) {
+        return null
+    }
 
     const handleChange = (e: any) => {
         dispatch(changeSort(e.target.dataset.value))

@@ -11,6 +11,10 @@ export const Search = () => {
     const { search } = useFilter()
     const dispatch = useFilterDispatch()
 
+    if (dispatch === null) {
+        return null
+    }
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(changeInput(e.target.value))
     }

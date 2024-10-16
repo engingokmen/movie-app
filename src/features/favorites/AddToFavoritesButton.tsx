@@ -8,7 +8,12 @@ interface AddToFavoritesButtonProps {
 
 export const AddToFavoritesButton = ({ id }: AddToFavoritesButtonProps) => {
     const favorites = useFavorites()
-    const { addToFavorites, removeFromFavorites } = useDispatchFavorites()
+    const dispatchFavorites = useDispatchFavorites()
+    if (dispatchFavorites === null) {
+        return null
+    }
+
+    const { addToFavorites, removeFromFavorites } = dispatchFavorites
     const isExist = favorites.includes(id)
 
     const handleClick = () => {

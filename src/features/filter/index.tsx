@@ -13,6 +13,10 @@ export const Filter = () => {
     const { filter } = useFilter()
     const dispatch = useFilterDispatch()
 
+    if (dispatch === null) {
+        return null
+    }
+
     const handleChange = (e: any) => {
         dispatch(changeFilter(e.target.dataset.value))
     }

@@ -1,7 +1,16 @@
-import React, { createContext, ReactNode, useContext, useState } from 'react'
+import React, {
+    createContext,
+    Dispatch,
+    ReactNode,
+    SetStateAction,
+    useContext,
+    useState,
+} from 'react'
 
-const AuthContext = createContext(null)
-const AuthDispatchContext = createContext(null)
+const AuthContext = createContext(false)
+const AuthDispatchContext = createContext<Dispatch<SetStateAction<boolean>>>(
+    () => false
+)
 
 interface AuthProviderProps {
     children: ReactNode

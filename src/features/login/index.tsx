@@ -14,12 +14,12 @@ const schema = yup
             .test(
                 'one-capital',
                 (d) => `${d.path} doesn't include a capital letter`,
-                (value) => /^(?=.*[A-Z]).*$/.test(value)
+                (value) => /^(?=.*[A-Z]).*$/.test(value ? value : '')
             )
             .test(
                 'one-number',
                 (d) => `${d.path} doesn't include a number`,
-                (value) => /^(?=.*\d).*$/.test(value)
+                (value) => /^(?=.*\d).*$/.test(value ? value : '')
             )
             .min(8)
             .required(),

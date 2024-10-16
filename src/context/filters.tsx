@@ -1,6 +1,12 @@
-import React, { createContext, ReactNode, useContext, useReducer } from 'react'
+import React, {
+    createContext,
+    Dispatch,
+    ReactNode,
+    useContext,
+    useReducer,
+} from 'react'
 import { texts } from '../texts'
-import { FilterOptionsEnum, SortOptionsEnum } from '../types'
+import { ACTIONTYPE, FilterOptionsEnum, SortOptionsEnum } from '../types'
 
 export const filterOptions = [
     { value: '', label: texts.all },
@@ -22,7 +28,7 @@ const initialState = {
 }
 
 const FilterContext = createContext(initialState)
-const FilterDispatchContext = createContext(null)
+const FilterDispatchContext = createContext<Dispatch<ACTIONTYPE> | null>(null)
 
 interface FilterProviderProps {
     children: ReactNode
@@ -45,10 +51,11 @@ export const useFilter = () => {
 }
 
 export const useFilterDispatch = () => {
-    return useContext(FilterDispatchContext)
+    const dispatchContext = useContext(FilterDispatchContext)
+    return dispatchContext
 }
 
-const reducer = (state: any, action: any) => {
+const reducer = (state: typeof initialState, action: ACTIONTYPE) => {
     switch (action.type) {
         case 'SET_SEARCH':
             return {

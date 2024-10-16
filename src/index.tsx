@@ -7,7 +7,7 @@ import { MoviesProvider } from './context/movies'
 import { FavoritesProvider } from './context/favorites'
 import { FilterProvider } from './context/filters'
 
-const root = createRoot(document.getElementById('app'))
+const root = createRoot(document.getElementById('app') as HTMLElement)
 root.render(
     <React.StrictMode>
         <AuthProvider>

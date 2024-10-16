@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { getMovieById, useMovies } from '../../context/movies'
+import { useMovieById } from '../../context/movies'
 import { ImdbScore } from '../../components/ImdbScore'
 import { AddToFavoritesButton } from '../favorites/AddToFavoritesButton'
 
 export const Detail = () => {
     const { id } = useParams()
-    const movies = useMovies()
-    const movie = getMovieById(movies, id)
+    const movie = useMovieById(id)
+
+    if (!movie) return null
 
     return (
         <>

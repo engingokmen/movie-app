@@ -8,7 +8,7 @@ import { ImdbScore } from '../../components/ImdbScore'
 export const Movies = () => {
     const filteredMovies = useFilteredMovies()
 
-    if (filteredMovies === null) {
+    if (filteredMovies === null || filteredMovies === undefined) {
         return <p>Loading...</p>
     }
 

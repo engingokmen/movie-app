@@ -4,14 +4,14 @@ import { useIsAuthenticated } from './authenticate'
 import { useFilter } from './filters'
 import { useFavorites } from './favorites'
 
-const MoviesContext = createContext<IMovie[]>(null)
+const MoviesContext = createContext<IMovie[] | null>(null)
 
 interface MoviesProviderProps {
     children: React.ReactNode
 }
 
 export const MoviesProvider = ({ children }: MoviesProviderProps) => {
-    const [movies, setMovies] = useState<IMovie[]>(null)
+    const [movies, setMovies] = useState<IMovie[] | null>(null)
     const isAuthenticated = useIsAuthenticated()
 
     const getMovies = async () => {
@@ -37,7 +37,11 @@ export const useFilteredMovies = () => {
     const { search, filter, sort } = useFilter()
     const favorites = useFavorites()
 
-    const movies = useContext(MoviesContext)
+    const movies = useMovies()
+
+    if (!movies) {
+        return null
+    }
 
     const searchedMovies = searchMovies(movies, search)
     const moviesOnFavorites = getMoviesOnFavorites(
@@ -51,16 +55,18 @@ export const useFilteredMovies = () => {
 }
 
 export const useMovies = () => {
-    return useContext(MoviesContext)
+    const movies = useContext(MoviesContext)
+    return movies
+}
+
+export const useMovieById = (id: string | null | undefined) => {
+    const movies = useMovies()
+    return getMovieById(movies, id)
 }
 
 // SELECTORS
 
 const searchMovies = (movies: IMovie[], search: string) => {
-    if (movies === null) {
-        return movies
-    }
-
     return movies.filter((movie) => {
         return movie.name.toLowerCase().includes(search.toLowerCase())
     })
@@ -71,7 +77,7 @@ const getMoviesOnFavorites = (
     favorites: string[],
     filter: string
 ) => {
-    if (movies === null || !filter) {
+    if (!filter) {
         return movies
     }
 
@@ -89,7 +95,7 @@ const getMoviesOnFavorites = (
 }
 
 const sortMovies = (movies: IMovie[], sort: string) => {
-    if (movies === null || !sort) {
+    if (!sort) {
         return movies
     }
 
@@ -130,7 +136,10 @@ const sortMovies = (movies: IMovie[], sort: string) => {
     }
 }
 
-export const getMovieById = (movies: IMovie[], id: string | null) => {
-    if (!id || !movies?.length) return
+const getMovieById = (
+    movies: IMovie[] | null,
+    id: string | null | undefined
+) => {
+    if (!id || !movies?.length) return null
     return movies.find((movie) => movie.id === id)
 }

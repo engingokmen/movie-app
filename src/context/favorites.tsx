@@ -1,7 +1,8 @@
 import React, { createContext, useContext, useState } from 'react'
+import { FavoritesAction } from '../types'
 
 const FavoritesContext = createContext<string[]>([])
-const FavoritesDispatchContext = createContext(null)
+const FavoritesDispatchContext = createContext<FavoritesAction | null>(null)
 
 interface FavoritesProviderProps {
     children: React.ReactNode
@@ -34,5 +35,6 @@ export const useFavorites = () => {
 }
 
 export const useDispatchFavorites = () => {
-    return useContext(FavoritesDispatchContext)
+    const favoritesDispatchContext = useContext(FavoritesDispatchContext)
+    return favoritesDispatchContext
 }
