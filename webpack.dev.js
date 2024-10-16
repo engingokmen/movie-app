@@ -3,6 +3,7 @@ const path = require('path')
 const common = require('./webpack.common.js')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = merge(common, {
     entry: './src/main.tsx',
@@ -14,6 +15,9 @@ module.exports = merge(common, {
             template: './src/html/index.html',
         }),
         new Dotenv(),
+        new CopyWebpackPlugin({
+            patterns: [{ from: 'public' }],
+        }),
     ],
     output: {
         filename: 'bundle.js',

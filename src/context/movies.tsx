@@ -15,9 +15,9 @@ export const MoviesProvider = ({ children }: MoviesProviderProps) => {
     const isAuthenticated = useIsAuthenticated()
 
     const getMovies = async () => {
-        const response = await fetch(`${process.env.DB}/movies`)
-        const data = await response.json()
-        setMovies(data)
+        const response = await fetch('db.json')
+        const { movies } = await response.json()
+        setMovies(movies)
     }
 
     useEffect(() => {
