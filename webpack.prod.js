@@ -4,6 +4,7 @@ const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
     mode: 'production',
+    entry: './src/index.tsx',
     externals: {
         react: 'react', // Prevent bundling React
         'react-dom': 'react-dom', // Prevent bundling React DOM

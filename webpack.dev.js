@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 
 module.exports = merge(common, {
+    entry: './src/main.tsx',
     mode: 'development',
     devtool: 'inline-source-map',
     plugins: [
