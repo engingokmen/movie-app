@@ -1,1 +1,1 @@
-export const PUBLIC_URL = process.env.PUBLIC_URL || '/movie/'
+export const BASE_URL = process.env.BASE_URL || '/movie/'

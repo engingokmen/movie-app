@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useMovieById } from '../../context/movies'
 import { ImdbScore } from '../../components/ImdbScore'
 import { AddToFavoritesButton } from '../favorites/AddToFavoritesButton'
-import { PUBLIC_URL } from '../../settings'
+import { BASE_URL } from '../../settings'
 
 export const Detail = () => {
     const { id } = useParams()
@@ -13,7 +13,7 @@ export const Detail = () => {
 
     return (
         <>
-            <Link to={`${PUBLIC_URL}movies`} className="back-link">
+            <Link to={`${BASE_URL}movies`} className="back-link">
                 Back to movies
             </Link>
             <div className="movie-detail">
