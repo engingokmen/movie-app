@@ -3,6 +3,7 @@ import { FilterOptionsEnum, IMovie, SortOptionsEnum } from '../types'
 import { useIsAuthenticated } from './authenticate'
 import { useFilter } from './filters'
 import { useFavorites } from './favorites'
+import db from '../../db.json'
 
 const MoviesContext = createContext<IMovie[] | null>(null)
 
@@ -15,8 +16,9 @@ export const MoviesProvider = ({ children }: MoviesProviderProps) => {
     const isAuthenticated = useIsAuthenticated()
 
     const getMovies = async () => {
-        const response = await fetch('db.json')
-        const { movies } = await response.json()
+        const response = await db
+        // const { movies } = await response.json()
+        const { movies } = response
         setMovies(movies)
     }
 
