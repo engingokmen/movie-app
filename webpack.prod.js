@@ -10,6 +10,7 @@ module.exports = merge(common, {
         'react-dom': 'react-dom', // Prevent bundling React DOM
     },
     output: {
+        publicPath: '/',
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,

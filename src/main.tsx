@@ -3,5 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './style/index.scss'
 import { MovieApp } from './MovieApp'
 
-const root = createRoot(document.getElementById('app') as HTMLElement)
-root.render(<MovieApp />)
+if (typeof window !== 'undefined') {
+    const element = window.document.getElementById('app') as HTMLElement
+    const root = createRoot(element)
+    root.render(<MovieApp />)
+}
