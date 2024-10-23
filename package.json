@@ -1,6 +1,6 @@
 {
     "name": "@engingokmen/movie-app",
-    "version": "1.1.15",
+    "version": "1.1.16",
     "description": "It is a movie app that you can search for movies and see their details.",
     "main": "dist/index.js",
     "scripts": {
