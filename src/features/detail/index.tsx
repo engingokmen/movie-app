@@ -13,10 +13,10 @@ export const Detail = () => {
 
     return (
         <>
-            <Link to={`${BASE_URL}movies`} className="back-link">
-                Back to movies
-            </Link>
             <div className="movie-detail">
+                <Link to={`${BASE_URL}movies`} className="back-link">
+                    Back to movies
+                </Link>
                 <AddToFavoritesButton id={movie.id} />
                 <div className="poster-container">
                     <img src={movie.poster} alt={movie.name} />
